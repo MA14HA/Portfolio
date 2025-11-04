@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio - Dark Mode</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CDiUu+Lz6wJ/nOqU0qV7uV9Z+T3I8pX0zE0s8eK5lY7G+T1NlWkH9V9n8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-indigo': '#6366f1', // Lighter indigo for better contrast on dark background
+                        'dark-bg': '#111827',
+                        'card-bg': '#1f2937', // Darker gray for cards
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .skill-tag {
+            @apply inline-block bg-primary-indigo/20 text-primary-indigo text-sm font-medium px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-200 transition duration-300 hover:scale-105;
+        }
+        .lang-tag {
+            @apply inline-block bg-green-900 text-green-200 text-base font-medium px-4 py-2 rounded-lg transition duration-300;
+        }
+        .contact-link {
+            @apply text-xl text-primary-indigo hover:text-indigo-400 transition duration-300 flex items-center font-medium;
+        }
+        /* Hidden by default on mobile */
+        #mobile-menu {
+            transition: transform 0.3s ease-out;
+            transform: translateX(100%);
+        }
+        /* Show when active */
+        .menu-open #mobile-menu {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-gray-200 transition-colors duration-500">
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden'); // Simple visibility toggle
+        }
+    </script>
+
+    <header class="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm shadow-xl shadow-gray-900 transition duration-500">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-indigo hover:text-indigo-400 transition duration-300">
+                Madhumitha S
+            </a>
+            
+            <nav class="hidden md:flex space-x-4">
+                <a href="#hero" class="text-gray-300 hover:text-primary-indigo font-medium transition">Profile</a>
+                <a href="#education" class="text-gray-300 hover:text-primary-indigo font-medium transition">Education</a>
+                <a href="#skills" class="text-gray-300 hover:text-primary-indigo font-medium transition">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-primary-indigo font-medium transition">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-primary-indigo font-medium transition">Contact</a>
+            </nav>           
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-20 border-b border-gray-800">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+                        Hello, I'm <span class="text-primary-indigo">Madhumitha Sekar</span>.
+                    </h1>
+                    <p class="text-xl md:text-xl text-gray-400 mb-6">
+                        Recent graduate equipped with strong communication and analytical skills, I am eager to apply my academic knowledge and contribute to organization while further developing my skills in a dynamic environment. I am a quick learner, highly motivated, and passionate.
+                    </p>
+                    <a href="Madhumitha.pdf" download="Madhumitha.pdf" 
+                    class="inline-block px-8 py-3 bg-primary-indigo text-white 
+                    font-semibold rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300">Download My Resume (PDF)</a>
+                        
+                    <a href="#contact" class="inline-block px-8 py-3 bg-primary-indigo text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300">
+                        Contact Me <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="Madhu_photo.jpg" alt="Your Profile Picture" class="w-64 h-64 object-cover rounded-full shadow-2xl border-4 border-primary-indigo transition duration-500 hover:scale-[1.03]">
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-16 bg-gray-900 border-b border-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Education Timeline <i class="fas fa-graduation-cap text-primary-indigo ml-2"></i></h2>
+                
+                <ol class="relative border-l border-gray-700 ml-4 md:ml-12">  
+                    <li class="mb-10 ml-6">
+                        <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-primary-indigo">
+                            <i class="fas fa-star text-white text-xs"></i>
+                        </span>
+                        <div class="p-4 bg-card-bg shadow-xl rounded-lg transition duration-300 hover:shadow-primary-indigo/50">
+                            <time class="block mb-2 text-sm font-semibold leading-none text-gray-400">October 2025 - Present</time>
+                            <h3 class="text-xl font-semibold text-white">MBA in (Artificial Intelligence and Data Science)</h3>
+                            <p class="text-base font-normal text-gray-300">SRM Educational and Research Institute</p>
+                            <p class="text-sm text-gray-400"></p>
+                        </div>
+                    </li>                
+                    <li class="mb-10 ml-6">
+                        <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-primary-indigo">
+                            <i class="fas fa-star text-white text-xs"></i>
+                        </span>
+                        <div class="p-4 bg-card-bg shadow-xl rounded-lg transition duration-300 hover:shadow-primary-indigo/50">
+                            <time class="block mb-2 text-sm font-semibold leading-none text-gray-400">2021 - 2025</time>
+                            <h3 class="text-xl font-semibold text-white">B.Tech in Computer Science</h3>
+                            <p class="text-base font-normal text-gray-300">Dr.MGR Educational and Research Institute</p>
+                            <p class="text-sm text-gray-400">CGPA: [9.06/10.0]</p>
+                        </div>
+                    </li>
+                    <li class="mb-10 ml-6">
+                        <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-primary-indigo">
+                            <i class="fas fa-school text-white text-xs"></i>
+                        </span>
+                        <div class="p-4 bg-card-bg shadow-xl rounded-lg transition duration-300 hover:shadow-primary-indigo/50">
+                            <time class="block mb-2 text-sm font-semibold leading-none text-gray-400">2019 - 2020</time>
+                            <h3 class="text-xl font-semibold text-white">Higher Secondary Education</h3>
+                            <p class="text-base font-normal text-gray-300">Velammal Mat.Hr Sec School</p>
+                            <p class="text-sm text-gray-400">Percentage: 84.1%</p>
+                        </div>
+                    </li>
+                    <li class="mb-10 ml-6">
+                        <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-primary-indigo">
+                            <i class="fas fa-school text-white text-xs"></i>
+                        </span>
+                        <div class="p-4 bg-card-bg shadow-xl rounded-lg transition duration-300 hover:shadow-primary-indigo/50">
+                            <time class="block mb-2 text-sm font-semibold leading-none text-gray-400">2017 - 2018</time>
+                            <h3 class="text-xl font-semibold text-white">High School Education</h3>
+                            <p class="text-base font-normal text-gray-300">Velammal Mat.Hr Sec School</p>
+                            <p class="text-sm text-gray-400">Percentage: 97.6%</p>
+
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 border-b border-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Technical Skills <i class="fas fa-code text-primary-indigo ml-2"></i></h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg hover:shadow-primary-indigo/40 transition duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-indigo"><i class="fas fa-desktop mr-2"></i> Front End</h3>
+                        <div class="flex flex-wrap flex-row gap-2">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS/Tailwind</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React.js</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg hover:shadow-primary-indigo/40 transition duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-indigo"><i class="fas fa-server mr-2"></i> Back End</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Node.js </span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C/C++</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg hover:shadow-primary-indigo/40 transition duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-indigo"><i class="fas fa-database mr-2"></i> Database</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Structural Query Language(SQL)</span>
+                            <span class="skill-tag">Amazon Web Service(AWS)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg hover:shadow-primary-indigo/40 transition duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-indigo"><i class="fas fa-users mr-2"></i> Soft & Other</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">MS Office</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Growth Mindset</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="py-16 bg-gray-900 border-t border-b border-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Project Showcase <i class="fas fa-laptop-code text-primary-indigo ml-2"></i></h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="bg-card-bg rounded-xl shadow-xl overflow-hidden group transition duration-300 hover:shadow-2xl">
+                        <img src="Weather Dashboard.png" alt="Project 1" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2">Weather Dashboard</h3>
+                            <p class="text-gray-400 mb-4">Designed and deployed a dynamic dashboard that retrieves, processes, and displays current weather conditions data for any user-specified global location.</p>
+                            <div class="flex justify-between items-center">
+                                <a href="https://weather-dashboard-lake-six.vercel.app/" target="_blank" class="text-primary-indigo font-medium hover:underline flex items-center">
+                                    <i class="fas fa-globe mr-2"></i> Live Site
+                                </a>
+                                <a href="https://github.com/MA14HA/Weather-Dashboard" target="_blank" class="text-gray-400 hover:text-primary-indigo flex items-center">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-card-bg rounded-xl shadow-xl overflow-hidden group transition duration-300 hover:shadow-2xl">
+                        <img src="Booknest.png" alt="Project 1" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2">Book-Nest</h3>
+                            <p class="text-gray-400 mb-4">Developed a modern, responsive online library shelf using HTML5 and the Tailwind CSS utility framework for rapid, maintainable styling and design consistency.</p>
+                            <div class="flex justify-between items-center">
+                                <a href="https://book-shelf-phi-six.vercel.app/" target="_blank" class="text-primary-indigo font-medium hover:underline flex items-center">
+                                    <i class="fas fa-globe mr-2"></i> Live Site
+                                </a>
+                                <a href="https://github.com/MA14HA/Book-Shelf" target="_blank" class="text-gray-400 hover:text-primary-indigo flex items-center">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-card-bg rounded-xl shadow-xl overflow-hidden group transition duration-300 hover:shadow-2xl">
+                        <img src="Movie Website.png" alt="Project 1" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2">Movie Booking System</h3>
+                            <p class="text-gray-400 mb-4">This project presents a comprehensive movie ticket booking system integrated with QR code functionality, an interactive chatbot and a user review feature.</p>
+                            <div class="flex justify-between items-center">
+                                <a href="https://mini-project-gilt-sigma.vercel.app/" target="_blank" class="text-primary-indigo font-medium hover:underline flex items-center">
+                                    <i class="fas fa-globe mr-2"></i> Live Site
+                                </a>
+                                <a href="https://github.com/MA14HA/MINI-PROJECT" target="_blank" class="text-gray-400 hover:text-primary-indigo flex items-center">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 border-b border-gray-800">
+        <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Experience <i class="fas fa-briefcase text-primary-indigo ml-2"></i></h2>
+        
+        <div class="grid md:grid-cols-1 gap-12">
+            <div>
+                <h3 class="text-3xl font-semibold mb-6 border-b pb-2 border-gray-700">Internship Experience</h3>
+                <div class="space-y-8">
+                    
+                    <div class="p-4 bg-card-bg rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="flex flex-col md:flex-row gap-4 items-start">
+                            <div>
+                                <p class="text-lg font-bold">DIGISAMAKSH - DATA SCIENCE INTERN</p>
+                                <p class="text-sm text-gray-400 mb-2">Nov 2024 – April 2025</p>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                    <li>Assisting in the collection, cleaning, and analysis of data sets.</li>
+                                    <li>Supporting the development and implementation of machine learning models.</li>
+                                    <li>Collaborating with team members on various data science projects.</li>
+                                    <li>Contributing to data visualization and reporting efforts.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-card-bg rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="flex flex-col md:flex-row gap-4 items-start">
+                            <div>
+                                <p class="text-lg font-bold">VERVE BRIDGE - DATA SCIENCE INTERN</p>
+                                <p class="text-sm text-gray-400 mb-2">Sep 2024 - Oct 2024</p>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                    <li>Analyzed a large dataset of movies to identify patterns and trends in ratings, genres and box office performance. </li>
+                                    <li>Applied machine learning models to predict a movie’s success based on factors like budget, cast and release date.</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-3xl font-semibold mb-6 border-b pb-2 border-gray-700">Paper Publications</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-card-bg rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <p class="font-semibold text-primary-indigo">"Accelerating innovation: The transformative impact of 5G"</p>
+                        <p class="text-sm text-gray-400">Laavanya M., Madhumitha S., & Maheswari A. (2023). International Journal of Advanced Trends in Engineering and Management (IJATEM), 86(5), 1221–1229.</p>
+                        <a href="https://www.researchgate.net/publication/373637009_Accelerating_innovation_the_transformative_impact_of_5G" target="_blank" class="text-sm text-indigo-400 hover:underline">View Publication</a>
+                    </div>
+
+                    <div class="p-4 bg-card-bg rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <p class="font-semibold text-primary-indigo">“ Cartooning an Image Using OpenCV - Python”</p>
+                        <p class="text-sm text-gray-400">M., Laavanya, S., Madhumitha, S., Namruthaa, S., Divya, A., Maheshwari, & C., Kajal. (2025, January 15). Cartooning an image using OpenCV - Python. SSRN. </p>
+                        <a href="https://www.researchgate.net/publication/389536290_Cartooning_an_Image_Using_OpenCV_-_Python" target="_blank" class="text-sm text-indigo-400 hover:underline">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <section id="certs" class="py-16 bg-gray-900 border-t border-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Certifications<i class="fas fa-certificate text-primary-indigo ml-2"></i></h2>
+                
+                <div class="mb-12">
+                    <div class="grid grid-cols-2  lg:grid-cols-4 gap-6">
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Nptel.png" alt="Certification Title 1" class="w-full h-40 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">NPTEL - C Language</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="RH 1.png" alt="Certification Title 1" class="w-full h-40 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">Red Hat Administration - I</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="RH 2.png" alt="Certification Title 1" class="w-full h-40 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">Red Hat Administration - II</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="UIUX.png" alt="Certification Title 1" class="w-full h-40 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">UI/UX</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Python.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - Python</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Java.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - Java</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Cloud.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - Cloud App Devlop</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="BI.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - Buisness Intelligence</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Bigdata.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - BigData Engineer</p>
+                            </div>
+                        </div>
+
+            <!--hidden--><div class=" hidden rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="ML.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - Machine Learning</p>
+                            </div>
+                        </div>
+
+            <!--hidden--><div class="hidden bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="AI.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">IBM - Artificial Intelligence</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Static Web.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">NxtWave - Static Website</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Responsive web.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">NxtWave - Responsive Website</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="XPM 4.0.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">NxtWave - XPM 4.0</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Programming Foundation With Py.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">NxtWave - Programming Foundation</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Developer foundation.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">NxtWave - Developer Foundation</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="Btech.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">B.Tech Completion Certificate</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg rounded-lg shadow overflow-hidden transform transition duration-300 hover:scale-[1.03]">
+                            <img src="CODE GALLATA.png" alt="Certification Title 1" class="w-full h-32 object-cover" title="Certification Title 1">
+                            <div class="p-3 text-center">
+                                <p class="text-sm font-medium truncate">Code - C,C++,PY With DS </p>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-semibold text-center mb-6">Known Languages</h3>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <span class="lang-tag">English (Fluent)</span>
+                        <span class="lang-tag">Tamil (Native)</span>
+                        <span class="lang-tag">Hindi (Fluent)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 border-t border-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect! <i class="far fa-handshake text-primary-indigo ml-2"></i></h2>
+                <p class="text-xl text-gray-400 mb-8">
+                    I'm open to discussing new projects, job opportunities, or interesting ideas.
+                </p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <a href="mailto:s.madhumitha.dsai@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope text-2xl mr-2"></i> Mail ID
+                    </a>
+                    <a href="http://www.linkedin.com/in/madhu14mitha" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin text-2xl mr-2"></i> LinkedIn
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+        <p>&copy; 2025 Madhumitha Sekar<br/> Built with Tailwind CSS and HTML<i class="fas fa-heart text-red-500"></i>.</p>
+    </footer>
+</body>
+</html>
